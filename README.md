@@ -12,10 +12,13 @@ The folder structure is method, basis set, then "standard" calculations.  Variat
 
 ## Mapping to text in SI document
 
-Originally, some of the calculations were combined geometry optimization and vibrational frequency calculations in the same input.  These inputs and outputs have all been split.
+Originally, some of the calculations were combined geometry optimization and vibrational frequency calculations in the same input.  These inputs and outputs have all been split.  (As a result, some of the frequency inputs repeated in their respective outputs have `$molecule read`, where the extracted input has been modified to work standalone.)
 
 - `methane.out` is really the entire contents of `b3lyp/methane`.
+- `{apo,ca,mg}_opt_freq_{m,w}.out` are `{m05-2x,wb97x-d}/def2-tzvp/{apo,ca_ct,mg_ct}_{opt,freq}.out`, where the optimization and frequency parts have been split as described above.
+- `{ca,mg}_{eda_w,sapt}.out` are `wb97x-d/def2-tzvp/{ca,mg}_ct_{eda,sapt_gas}.out`.
+- `{cainmg,mginca}_{eda_w,sapt}.out` are `wb97x-d/def2-tzvp/swap_metals/{cainmg,mginca}_ct_{eda,sapt_gas}.out`.
 
 ## Analysis notes
 
-The script to make EDA/SAPT analysis tables is also provided under `wb97x-d/def2-tzvp/analysis.py`.  It depends on [cclib](https://pypi.org/project/cclib/), [pydantic](https://pypi.org/project/pydantic/), and [pylatex](https://pypi.org/project/PyLaTeX/).
+The script to make EDA/SAPT analysis tables is also provided under [`wb97x-d/def2-tzvp/analysis.py`](wb97x-d/def2-tzvp/analysis.py).  It depends on [cclib](https://pypi.org/project/cclib/), [pydantic](https://pypi.org/project/pydantic/), and [pylatex](https://pypi.org/project/PyLaTeX/).
