@@ -1,4 +1,7 @@
 # 10.1021/acs.jpca.1c03061
+
+[![DOI](https://zenodo.org/badge/448337446.svg)](https://zenodo.org/badge/latestdoi/448337446)
+
 Supporting information (calculation outputs, structures) for https://doi.org/10.1021/acs.jpca.1c03061
 
 The folder structure is method, basis set, then "standard" calculations.  Variations are in further subfolders.
